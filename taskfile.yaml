@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  generate: # что будет сгенерировано(то что в cmds только остальное это вспомоготельные компоненты) если в консоли написать gen/generate
+    aliases: # нужно чтобы использовать другое название к generate, в данном случае gen тоетсь можно использовать и gen и generate при вводе команде task gen/ task generate
+      - gen
+    cmds: # сама команда которая будет выполнена при запуске таск файла
+      - protoc -I proto proto/sso/sso.proto --go_out=./gen/go --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
+    # вот эта большая команда будет выполнена если бы тут еще команды были бы то и они тоже выполнились при команде task generate или gen 
+    
