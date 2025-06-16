@@ -1,4 +1,4 @@
-module github.com/k3mpton/ssohnik
+module github.com/k3mpton/Potofiletest
 
 go 1.24.1
 
